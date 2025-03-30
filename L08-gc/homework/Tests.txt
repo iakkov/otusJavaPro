@@ -1,0 +1,16 @@
+1. Heap 16m - sec:124
+2. Heap 256m - sec:109
+3. Heap 1024m - sec:110
+4. Heap 2048m - sec:106
+5. Heap 2560m - sec:115
+6. Heap 4096m - sec:115
+7. Heap 8192m - sec:113
+
+После оптимизации:
+1. Heap 16m - sec:121
+2. Heap 256m - sec:113
+3. Heap 1024m - sec:112
+4. Heap 2048m - sec:110
+5. Heap 2560m - sec:114
+6. Heap 4096m - sec:107
+7. Heap 8192m - sec:110
