@@ -17,17 +17,15 @@ public class CalcDemo {
     private static final Logger log = LoggerFactory.getLogger(CalcDemo.class);
 
     public static void main(String[] args) {
-        long counter = 500_000_000;
-        var summator = new Summator();
+        long counter = 50_000_000;
+        Summator summator = new Summator();
         long startTime = System.currentTimeMillis();
 
-        for (var idx = 0; idx < counter; idx++) {
-            var data = new Data(idx);
-            summator.calc(data);
-
+        for (int idx = 0; idx < counter; idx++) {
             if (idx % 10_000_000 == 0) {
                 log.info("{} current idx:{}", LocalDateTime.now(), idx);
             }
+            summator.calc(new Data(idx));
         }
 
         long delta = System.currentTimeMillis() - startTime;
