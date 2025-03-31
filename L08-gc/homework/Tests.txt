@@ -7,10 +7,10 @@
 7. Heap 8192m - sec:113
 
 После оптимизации:
-1. Heap 16m - sec:121
-2. Heap 256m - sec:113
-3. Heap 1024m - sec:112
-4. Heap 2048m - sec:110
-5. Heap 2560m - sec:114
-6. Heap 4096m - sec:107
-7. Heap 8192m - sec:110
+1. Heap 16m - sec:101
+2. Heap 256m - sec:99
+3. Heap 1024m - sec:99
+4. Heap 2048m - sec:98
+5. Heap 2560m - sec:103
+6. Heap 4096m - sec:100
+7. Heap 8192m - sec:99
