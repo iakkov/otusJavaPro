@@ -19,13 +19,15 @@ public class CalcDemo {
     public static void main(String[] args) {
         long counter = 50_000_000;
         Summator summator = new Summator();
+        Data data = new Data(0);
         long startTime = System.currentTimeMillis();
 
         for (int idx = 0; idx < counter; idx++) {
             if (idx % 10_000_000 == 0) {
                 log.info("{} current idx:{}", LocalDateTime.now(), idx);
             }
-            summator.calc(new Data(idx));
+            data.setValue(idx);
+            summator.calc(data);
         }
 
         long delta = System.currentTimeMillis() - startTime;
