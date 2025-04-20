@@ -24,19 +24,14 @@ public class HttpServer {
             System.exit(1);
         }
         while (!shutdown) {
-            try (Socket socket = serverSocket.accept();
-                 InputStream input = socket.getInputStream();
-                 OutputStream output = socket.getOutputStream()){
+            try (
+                    Socket socket = serverSocket.accept();
+                    InputStream input = socket.getInputStream();
+                    OutputStream output = socket.getOutputStream()
+            ) {
                 System.out.println("Получен входящий запрос");
-                byte[] buffer = new byte[4096];
-                while (true) {
-                    int n = socket.getInputStream().read(buffer);
-                    String message = new String(buffer, 0, n);
-                    System.out.print(message);
-                    if (message.equals("/shutdown")) {
-                        break;
-                    }
-                }
+                Request request = new Request(input);
+                request.parse();
             } catch (IOException e) {
                 e.printStackTrace();
             }
