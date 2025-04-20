@@ -32,6 +32,7 @@ public class HttpServer {
                 System.out.println("Получен входящий запрос");
                 Request request = new Request(input);
                 request.parse();
+                System.out.println(request.getUri());
             } catch (IOException e) {
                 e.printStackTrace();
             }
