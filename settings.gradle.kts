@@ -1,6 +1,6 @@
 rootProject.name = "otusJava"
 include("L01-gradle")
-
+include("L00-other")
 include("L02-gradle2")
 include("L02-gradle2-libApi")
 include("L02-gradle2-libApiUse")
