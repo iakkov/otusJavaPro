@@ -2,8 +2,7 @@ package homework;
 
 import java.util.Objects;
 
-@SuppressWarnings({"java:S1135"}) // при выполнении ДЗ эту аннотацию надо удалить
-public class Customer {
+public class Customer implements Comparable<Customer> {
     private final long id;
     private String name;
     private long scores;
@@ -14,6 +13,12 @@ public class Customer {
         this.id = id;
         this.name = name;
         this.scores = scores;
+    }
+
+    public Customer(Customer other) {
+        this.id = other.id;
+        this.name = other.name;
+        this.scores = other.scores;
     }
 
     public long getId() {
@@ -48,16 +53,16 @@ public class Customer {
 
         Customer customer = (Customer) o;
 
-        if (id != customer.id) return false;
-        if (scores != customer.scores) return false;
-        return Objects.equals(name, customer.name);
+        return id == customer.id;
     }
 
     @Override
     public int hashCode() {
-        int result = Long.hashCode(id);
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + Long.hashCode(scores);
-        return result;
+        return Objects.hash(id);
+    }
+
+    @Override
+    public int compareTo(Customer other) {
+        return Long.compare(this.scores, other.scores);
     }
 }
